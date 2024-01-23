@@ -2,8 +2,6 @@ package com.simple.behavioral.observer;
 
 import java.util.Map;
 
-import javax.swing.event.DocumentEvent.EventType;
-
 import java.util.ArrayList;
 
 
