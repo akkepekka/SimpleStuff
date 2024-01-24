@@ -1,5 +1,9 @@
 package com.simple.behavioral.visitor;
 
+/*
+ * Find BlueInterface in com.simple.behavioral.visitor.BlueInterface
+ * 
+ */
 public class Blue implements BlueInterface {
 
     private String objectName;

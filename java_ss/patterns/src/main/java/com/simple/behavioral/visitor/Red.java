@@ -1,5 +1,9 @@
 package com.simple.behavioral.visitor;
 
+/*
+ * Find RedInterface in com.simple.behavioral.visitor.RedInterface
+ * 
+ */
 public class Red implements RedInterface{
  
     private String objectName;

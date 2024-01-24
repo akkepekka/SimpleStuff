@@ -1,5 +1,9 @@
 package com.simple.behavioral.visitor;
 
+/*
+ * Find Visitor in com.simple.behavioral.visitor.Visitor
+ * 
+ */
 public class VisitorStringify implements Visitor {
     
     private String string = "";
