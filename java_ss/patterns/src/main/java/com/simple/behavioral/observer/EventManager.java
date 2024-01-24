@@ -5,7 +5,15 @@ import java.util.Map;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-
+/*
+ * Alternative to Observable, a class that holds multiple Observables
+ * in order to centralize event management.
+ * 
+ * - EventType<E> is used as a key to find spesific event to observe.
+ * - Context<C> is used to transmit event data to Observers from the
+ * Observables.
+ * 
+ */
 public class EventManager<E,C> {
     
     private Map<E,ArrayList<Observer<C>>> eventTypes;

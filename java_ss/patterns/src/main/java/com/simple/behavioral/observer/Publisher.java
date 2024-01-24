@@ -2,6 +2,10 @@ package com.simple.behavioral.observer;
 
 import java.util.ArrayList;
 
+/*
+ * Find Observable in com.simple.behavioral.observer.Observable
+ * 
+ */
 public class Publisher<C> implements Observable<C>{
 
     private ArrayList<Observer<C>> observers;
