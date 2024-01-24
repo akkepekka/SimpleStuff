@@ -3,32 +3,33 @@ package com.simple.behavioral.observer;
 import java.util.Map;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
-public class EventManager implements Observable {
+public class EventManager<E,C> {
     
-    private Map<Object,ArrayList<Observer>> eventTypes;
+    private Map<E,ArrayList<Observer<C>>> eventTypes;
 
     public EventManager() {
-        this.eventTypes = new Map<Object,ArrayList<Observer>>();
+        this.eventTypes = new HashMap<E,ArrayList<Observer<C>>>();
     }
 
-    public void subscribe(Object eventType, Observer observer) {
+    public void subscribe(E eventType, Observer<C> observer) {
         if (this.eventTypes.containsKey(eventType)) {
             this.eventTypes.get(eventType).add(observer);
         } else {
-            ArrayList<Observer> array = new ArrayList<Observer>();
+            ArrayList<Observer<C>> array = new ArrayList<Observer<C>>();
             array.add(observer);
             this.eventTypes.put(eventType, array); 
         }
     }
 
-    public void unsubscribe(EventType eventType, Observer observer) {
+    public void unsubscribe(E eventType, Observer<C> observer) {
         this.eventTypes.get(eventType).removeIf(n -> n.equals(observer));
     }
 
-    public push(Object eventType, Context context) {
-        for ( Observer observer : this.eventTypes.get(eventType)) {
+    public void push(E eventType, C context) {
+        for ( Observer<C> observer : this.eventTypes.get(eventType)) {
             observer.update(context);
         }
     }

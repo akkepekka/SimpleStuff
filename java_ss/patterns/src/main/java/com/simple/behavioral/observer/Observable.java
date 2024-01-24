@@ -1,11 +1,11 @@
 package com.simple.behavioral.observer;
 
-public interface Observable {
+public interface Observable<C> {
 
-    public void subscribe(Observer observer);
+    public void subscribe(Observer<C> observer);
 
-    public void unsubscribe(Observer observer);
+    public void unsubscribe(Observer<C> observer);
 
-    public void push(EventType eve); // known elsewhere as 'notify'
+    public void push(C context); // known elsewhere as 'notify'
 
 }

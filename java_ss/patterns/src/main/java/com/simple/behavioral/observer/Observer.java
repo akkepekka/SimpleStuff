@@ -1,5 +1,5 @@
 package com.simple.behavioral.observer;
 
-public interface Observer {
-    public void update(Context context);
+public interface Observer<C> {
+    public void update(C context);
 }
